@@ -7,5 +7,6 @@ public class MavenTest {
     public void testHello(){
         System.out.println("hello maven");
         System.out.println("hello maven");
+        System.out.println("hello maven");
     }
 }
