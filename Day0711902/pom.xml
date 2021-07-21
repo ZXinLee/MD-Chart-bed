@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!--parent 集中定义了版本号-与2.5.1版本的SpringBoot兼容的其他jar包版本号 -官网维护-->
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
         <groupId>org.springframework.boot</groupId>
@@ -35,5 +36,16 @@
         </dependency>
 
     </dependencies>
+
+    <!--    插件 ： SpringBoot项目打包是必须的插件 没有该插件则jar包无法运行-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.5.1</version>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

@@ -1,2 +1,7 @@
 server:
   port: 8080
+#spring:
+#  security:
+#    user:
+#      name: root
+#      password: '{bcrypt}$2a$10$3X1u6gLjB7V5bwzd08a4Ju51SA6KlysPru60rfhfW35qz5F.ZXZyK'
