@@ -54,6 +54,6 @@ public class ResourceController {
     @PreAuthorize("hasAuthority('sys:res:delete')")
     @RequestMapping("/doDelete")
     public String doDelete() {
-        return "delete resource (dalete data) ok";
+        return "delete resource (delete data) ok";
     }
 }
