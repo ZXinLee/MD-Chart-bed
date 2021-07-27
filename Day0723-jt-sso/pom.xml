@@ -14,6 +14,8 @@
     <modules>
         <module>sso-auth</module>
         <module>sso-resource</module>
+        <module>sso-common</module>
+        <module>sso-ui</module>
     </modules>
 
     <parent>

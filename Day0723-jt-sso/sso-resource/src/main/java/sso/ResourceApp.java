@@ -2,8 +2,10 @@ package sso;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
 import java.util.Arrays;
+//启动方法上的权限控制
 
 @SpringBootApplication
 public class ResourceApp {
