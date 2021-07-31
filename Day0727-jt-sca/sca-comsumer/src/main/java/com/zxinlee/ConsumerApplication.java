@@ -1,5 +1,6 @@
 package com.zxinlee;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -10,7 +11,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -50,6 +51,13 @@ public class ConsumerApplication {
          */
         @Autowired
         private LoadBalancerClient loadBalancerClient;
+
+        //http://ip:port/consumer/doFindById?id=20
+        @GetMapping("/consumer/doFindById")
+        @SentinelResource("findById")
+        public String doFindById(@RequestParam("id") Integer id){
+            return "resource id is " + id;
+        }
 
         @GetMapping("/consumer/doEcho")
         public String doEcho() {

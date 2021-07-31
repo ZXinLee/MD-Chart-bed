@@ -11,6 +11,7 @@
     <modules>
         <module>sca-provider</module>
         <module>sca-comsumer</module>
+        <module>sca-gateway</module>
     </modules>
 
     <parent>
