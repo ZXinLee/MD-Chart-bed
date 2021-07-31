@@ -1,0 +1,32 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /
+#Spring整合数据源
+spring:
+  datasource:
+    #使用高版本驱动时使用cj
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #serverTimezone=GMT%2B8
+    #&useUnicode=true&characterEncoding=utf8  是否开启编码
+    #&autoReconnect=true  断线是否重连
+    #&allowMultiQueries=true  是否允许批量操作
+    url: jdbc:mysql://127.0.0.1:3306/ttpc?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
+    username: root
+    #如果密码以数据0开头，则以""号包裹--"0123456"
+    password: 12341234
+
+#SpringBoot整合MyBatisPlus配置
+mybatis-plus:
+  #设置别名包
+  type-aliases-package: com.ttpc.pojo
+  #加载映射文件
+  mapper-locations: classpath:/mappers/*.xml
+  #开启驼峰映射
+  configuration:
+    map-underscore-to-camel-case: true
+#打印SQL语句
+logging:
+  level:
+    com.jt.mapper: debug
+
